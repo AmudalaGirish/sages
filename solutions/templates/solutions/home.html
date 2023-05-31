@@ -1,0 +1,66 @@
+{% load static %} 
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <title>Sages - Gas Energy Solutions</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/styles.css' %}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Sages</h1>
+            <p>We provide reliable gas pipeline installation services.</p>
+            <a href="#contact" class="btn">Get Started</a>
+        </div>
+    </section>
+
+    <section id="services" class="services-section">
+        <h2>Our Services</h2>
+        <div class="service">
+            <img src="{% static 'images/service1.jpg' %}" alt="Service 1">
+            <h3>Gas Pipeline Installation</h3>
+            <p>We specialize in gas pipeline installation for commercial, industrial, laboratory, and residential applications.</p>
+        </div>
+        <div class="service">
+            <img src="{% static 'images/service2.jpg' %}" alt="Service 2">
+            <h3>Fuel Conversion</h3>
+            <p>We offer expert advice and solutions for fuel conversion to optimize energy efficiency.</p>
+        </div>
+        <div class="service">
+            <img src="{% static 'images/service3.jpg' %}" alt="Service 3">
+            <h3>Commercial Stove Manufacturing</h3>
+            <p>We manufacture high-quality commercial stoves and equipment for the LPG field.</p>
+        </div>
+    </section>
+
+    <section id="about" class="about-section">
+        <h2>About Us</h2>
+        <p>Sages has been providing gas pipeline installation services since 1987. With our expertise in the field, we ensure safe and efficient gas energy solutions for our clients.</p>
+    </section>
+
+    <section id="contact" class="contact-section">
+        <h2>Contact Us</h2>
+        <p>Get in touch with us for all your gas energy needs.</p>
+        <div class="contact-details">
+            <p>Phone: +1 123-456-7890</p>
+            <p>Email: info@sagesgas.com</p>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Sages Gas Energy Solutions. All rights reserved.</p>
+    </footer>
+</body>
+</html>
