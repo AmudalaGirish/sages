@@ -1,0 +1,5 @@
+myenv/             # Replace with your virtual environment folder name
+*.pyc
+__pycache__/
+db.sqlite3         # If using SQLite
+.DS_Store          # macOS-specific
