@@ -4,13 +4,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{% block title %}LPG Pipeline Solutions{% endblock %}</title>
-    <link rel="stylesheet" href="{% static 'styles.css' %}">
+    <title>{% block title %}Sages{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'core/style.css' %}">
 </head>
 <body>
     <header>
         <nav>
-            <!-- Your navigation bar here -->
+            <div class="logo">
+                <h2>SAGES</h2>
+            </div>
+            <ul class="nav-links">
+                <li><a href="">Home</a></li>
+                <li><a href="{% url 'about' %}">About</a></li>
+                <li><a href="{% url 'enquiry' %}">Request a Quote</a></li>
+                <li><a href="#solutions">Solutions</a></li>
+                <li><a href="#clients">Clients</a></li>
+                
+            </ul>
         </nav>
     </header>
 
@@ -19,7 +29,11 @@
     </main>
 
     <footer>
-        <!-- Your footer here -->
+        <p>&copy; 2024 LPG Pipeline Solutions | All Rights Reserved</p>
+        <ul>
+            <li><a href="#">Privacy Policy</a></li>
+            <li><a href="#">Terms of Service</a></li>
+        </ul>
     </footer>
 </body>
 </html>
