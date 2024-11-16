@@ -3,145 +3,131 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Invoice</title>
+  <title>Improved Invoice Design</title>
   <style>
     body {
       font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 20px;
-      font-size: 12px;
-      background-color: #f8f9fa;
     }
-    .invoice-container {
-      max-width: 800px;
-      margin: auto;
-      background: #fff;
-      padding: 20px;
-      border: 1px solid #ddd;
-      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    .invoice {
+      border: 2px solid black;
+      width: 800px;
+      margin: 20px auto;
+      padding: 10px;
     }
     .header {
       text-align: center;
+      margin-bottom: 10px;
     }
-    .header h1 {
-      margin: 0;
+    .header .title {
+      font-size: 24px;
+      font-weight: bold;
     }
-    .details {
-      margin-top: 20px;
+    .header .subtitle {
+      font-size: 14px;
     }
-    .details table {
-      width: 100%;
-      border-collapse: collapse;
+    .divider {
+      border-top: 2px solid black;
+      margin: 10px 0;
     }
-    .details th, .details td {
-      text-align: left;
+    .section {
+      margin-bottom: 15px;
+    }
+    .row-group {
+      display: flex;
+      justify-content: space-between;
+    }
+    .left, .middle, .right {
+      width: 32%;
+    }
+    .items {
+      border: 1px solid black;
       padding: 5px;
-      border: 1px solid #ddd;
     }
-    .details th {
-      background-color: #f2f2f2;
+    .item-row {
+      display: flex;
+      justify-content: space-between;
+      padding: 5px 0;
+      border-bottom: 1px dotted black;
     }
-    .bank-details, .total {
-      margin-top: 20px;
+    .item-row:last-child {
+      border-bottom: none;
     }
-    .amount-in-words {
-      margin-top: 20px;
+    .bank-details {
+      border: 1px solid black;
+      padding: 10px;
+    }
+    .summary {
+      text-align: right;
+      margin-top: 10px;
     }
     .footer {
-      text-align: right;
-      margin-top: 30px;
+      text-align: center;
+      margin-top: 15px;
     }
   </style>
 </head>
 <body>
-  <div class="invoice-container">
+  <div class="invoice">
+    <!-- Header Section -->
     <div class="header">
-      <h1>Tax Invoice</h1>
-      <p>Sri Amudala's<br>Gas Appliances & Commercial Works</p>
-      <p>Shop No. 1, Shopping Complex, Leelamahal Road, Madhura Nagar, Tirupati – 517501</p>
-      <p>Email: sriamudala@gmail.com | Phone: 9002050959</p>
+      <div class="title">Tax Invoice</div>
+      <div class="subtitle">Sri Amudala's Gas Appliances & Commercial Works</div>
+      <div class="subtitle">Shop no.1, Leelamahal Road, Tirupati - 517501</div>
+    </div>
+    <div class="divider"></div>
+
+    <!-- Address and Details Section -->
+    <div class="section row-group">
+      <div class="left">
+        <p><b>To:</b><br>Amara Raja Energy & Mobility Limited</p>
+      </div>
+      <div class="middle">
+        <p><b>GSTIN:</b> 37JJBPS651PZ3</p>
+        <p><b>PO No:</b> 1119230042</p>
+      </div>
+      <div class="right">
+        <p><b>Invoice No:</b> TXB00327</p>
+        <p><b>Date:</b> 05/11/2024</p>
+      </div>
     </div>
 
-    <div class="details">
-      <table>
-        <tr>
-          <th>To</th>
-          <td>Amara Raja Energy & Mobility Limited, Renigunta-Cuddapah Road</td>
-        </tr>
-        <tr>
-          <th>PO No</th>
-          <td>#1119230042</td>
-        </tr>
-        <tr>
-          <th>Date</th>
-          <td>05/11/2024</td>
-        </tr>
-        <tr>
-          <th>Invoice No</th>
-          <td>#1080327</td>
-        </tr>
-      </table>
+    <!-- Items Section -->
+    <div class="section items">
+      <div class="item-row">
+        <div>S. No</div>
+        <div>Description</div>
+        <div>Quantity</div>
+        <div>Rate</div>
+        <div>Amount</div>
+      </div>
+      <div class="item-row">
+        <div>1</div>
+        <div>G-100 Burner</div>
+        <div>5</div>
+        <div>2750</div>
+        <div>13750</div>
+      </div>
+      <!-- Add more rows as needed -->
     </div>
 
-    <div class="details">
-      <table>
-        <thead>
-          <tr>
-            <th>S.No</th>
-            <th>Description</th>
-            <th>Quantity</th>
-            <th>Rate</th>
-            <th>Amount</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>G-100 Burner with bottom and Air clamp</td>
-            <td>5</td>
-            <td>2,750.00</td>
-            <td>13,750.00</td>
-          </tr>
-          <!-- Add more rows as needed -->
-        </tbody>
-      </table>
+    <!-- Bank Details Section -->
+    <div class="section bank-details">
+      <p><b>Bank Name:</b> Indian Bank Ltd</p>
+      <p><b>Branch:</b> Tirupati</p>
+      <p><b>Account Number:</b> 50434228387</p>
+      <p><b>IFSC Code:</b> IDIB000T592</p>
     </div>
 
-    <div class="bank-details">
-      <h4>Bank Details</h4>
-      <p>A/C Name: Sri Amudala's Gas Appliances & Commercial Works</p>
-      <p>Bank Name: Indian Bank</p>
-      <p>Branch: Tirupati</p>
-      <p>IFSC Code: IDIB000T592</p>
+    <!-- Summary Section -->
+    <div class="summary">
+      <p><b>Subtotal:</b> ₹43,050</p>
+      <p><b>CGST (9%):</b> ₹3,874.50</p>
+      <p><b>SGST (9%):</b> ₹3,874.50</p>
+      <p><b>Total:</b> ₹50,799</p>
     </div>
 
-    <div class="total">
-      <table>
-        <tr>
-          <th>Subtotal</th>
-          <td>43,050.00</td>
-        </tr>
-        <tr>
-          <th>CGST @ 9%</th>
-          <td>3,874.50</td>
-        </tr>
-        <tr>
-          <th>SGST @ 9%</th>
-          <td>3,874.50</td>
-        </tr>
-        <tr>
-          <th>Grand Total</th>
-          <td>50,799.00</td>
-        </tr>
-      </table>
-    </div>
-
-    <div class="amount-in-words">
-      <p><strong>Amount in Words:</strong> Fifty Thousand Seven Hundred Ninety-Nine Rupees Only</p>
-    </div>
-
+    <!-- Footer Section -->
     <div class="footer">
-      <p>For Sri Amudala's Gas Appliances & Commercial Works</p>
       <p>Authorized Signatory</p>
     </div>
   </div>
