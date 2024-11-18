@@ -26,9 +26,13 @@
       font-size: 14px;
     }
     .divider {
-      border-top: 2px solid black;
-      margin: 10px 0;
+      border-top: 1px solid black;
+      margin: 0; /* Remove default spacing */
+      width: calc(100% + 20px); /* Extend divider to touch borders, compensating for padding */
+      position: relative; /* Align relative to parent */
+      left: -10px; /* Adjust for left padding */
     }
+
     .section {
       margin-bottom: 15px;
     }
@@ -64,6 +68,15 @@
       text-align: center;
       margin-top: 15px;
     }
+
+    .vertical-line {
+      width: 1px;
+      background-color: black;
+      position: absolute;
+      height: 35%;
+      left: 65%;
+    }
+    
   </style>
 </head>
 <body>
@@ -80,21 +93,25 @@
     <div class="section row-group">
       <div class="left">
         <p><b>To:</b><br>Amara Raja Energy & Mobility Limited</p>
+        <p><b>Ship To:</b><br>Amara Raja Energy & Mobility Limited</p>
       </div>
-      <div class="middle">
+
+      <!-- Divider Line -->
+      <div class="vertical-line"></div>
+
+      <div class="right">
         <p><b>GSTIN:</b> 37JJBPS651PZ3</p>
         <p><b>PO No:</b> 1119230042</p>
-      </div>
-      <div class="right">
         <p><b>Invoice No:</b> TXB00327</p>
         <p><b>Date:</b> 05/11/2024</p>
+        <p><b>GST(if Reg.):</b> 37JJBPS651PZ3 </p>
       </div>
     </div>
 
     <!-- Items Section -->
     <div class="section items">
       <div class="item-row">
-        <div>S. No</div>
+        <div>S.No</div>
         <div>Description</div>
         <div>Quantity</div>
         <div>Rate</div>
