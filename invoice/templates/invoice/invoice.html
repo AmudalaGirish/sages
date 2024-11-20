@@ -25,7 +25,7 @@
     .header .subtitle {
       font-size: 14px;
     }
-    .divider {
+    .first-divider {
       border-top: 1px solid black;
       margin: 0; /* Remove default spacing */
       width: calc(100% + 20px); /* Extend divider to touch borders, compensating for padding */
@@ -33,29 +33,57 @@
       left: -10px; /* Adjust for left padding */
     }
 
-    .section {
-      margin-bottom: 15px;
-    }
-    .row-group {
-      display: flex;
-      justify-content: space-between;
-    }
     .left, .middle, .right {
       width: 32%;
     }
-    .items {
-      border: 1px solid black;
-      padding: 5px;
-    }
-    .item-row {
+
+    .vertical-line-container {
       display: flex;
       justify-content: space-between;
-      padding: 5px 0;
-      border-bottom: 1px dotted black;
+      position: relative;
+      align-items: stretch; /* Ensures the vertical line stretches based on content */
     }
-    .item-row:last-child {
-      border-bottom: none;
+
+    .vertical-line {
+      width: 1px;
+      background-color: black;
+      position: absolute;
+      top: 0;
+      bottom: 0; /* Ensure it stretches from the top to the bottom of the parent container */
+      left: 65%; /* Adjust based on layout */
     }
+
+    .first-divider, .second-divider {
+      border-top: 1px solid black;
+      margin: 0; /* Remove default spacing */
+      width: 100%; /* Ensures it spans the container */
+    }
+    
+    .items-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    .items-table th, .items-table td {
+      border: 1px solid black;
+      text-align: center;
+      padding: 8px;
+    }
+    .items-table th {
+      background-color: #f2f2f2;
+    }
+    .items-table td.description {
+      text-align: left;
+      white-space: pre-wrap; /* Ensures multi-line content is displayed properly */
+    }
+    .second-divider {
+      border-top: 1px solid black;
+      margin: 0; /* Remove default spacing */
+      width: calc(100% + 20px); /* Extend divider to touch borders, compensating for padding */
+      position: relative; /* Align relative to parent */
+      left: -10px; /* Adjust for left padding */
+      
+    } 
     .bank-details {
       border: 1px solid black;
       padding: 10px;
@@ -68,14 +96,6 @@
       text-align: center;
       margin-top: 15px;
     }
-
-    .vertical-line {
-      width: 1px;
-      background-color: black;
-      position: absolute;
-      height: 35%;
-      left: 65%;
-    }
     
   </style>
 </head>
@@ -87,44 +107,72 @@
       <div class="subtitle">Sri Amudala's Gas Appliances & Commercial Works</div>
       <div class="subtitle">Shop no.1, Leelamahal Road, Tirupati - 517501</div>
     </div>
-    <div class="divider"></div>
-
-    <!-- Address and Details Section -->
-    <div class="section row-group">
-      <div class="left">
-        <p><b>To:</b><br>Amara Raja Energy & Mobility Limited</p>
-        <p><b>Ship To:</b><br>Amara Raja Energy & Mobility Limited</p>
+    <div class="section">
+      <!-- First Divider -->
+      <div class="first-divider"></div>
+    
+      <!-- Address Section with Vertical Line -->
+      <div class="vertical-line-container">
+        <div class="left">
+          <p><b>To:</b><br>Amara Raja Energy & Mobility Limited<br>Example Address Line 2</p>
+          <p><b>Ship To:</b><br>Amara Raja Energy & Mobility Limited<br>Example Address Line 2<br>Example Address Line 3</p>
+        </div>
+    
+        <!-- Vertical Line -->
+        <div class="vertical-line"></div>
+    
+        <div class="right">
+          <p><b>GSTIN:</b> 37JJBPS651PZ3</p>
+          <p><b>PO No:</b> 1119230042</p>
+          <p><b>Invoice No:</b> TXB00327</p>
+          <p><b>Date:</b> 05/11/2024</p>
+          <p><b>GST(if Reg.):</b> 37JJBPS651PZ3 </p>
+        </div>
       </div>
+    
+      <!-- Second Divider -->
+      <div class="second-divider"></div>
+    </div>    
 
-      <!-- Divider Line -->
-      <div class="vertical-line"></div>
-
-      <div class="right">
-        <p><b>GSTIN:</b> 37JJBPS651PZ3</p>
-        <p><b>PO No:</b> 1119230042</p>
-        <p><b>Invoice No:</b> TXB00327</p>
-        <p><b>Date:</b> 05/11/2024</p>
-        <p><b>GST(if Reg.):</b> 37JJBPS651PZ3 </p>
-      </div>
-    </div>
-
-    <!-- Items Section -->
-    <div class="section items">
-      <div class="item-row">
-        <div>S.No</div>
-        <div>Description</div>
-        <div>Quantity</div>
-        <div>Rate</div>
-        <div>Amount</div>
-      </div>
-      <div class="item-row">
-        <div>1</div>
-        <div>G-100 Burner</div>
-        <div>5</div>
-        <div>2750</div>
-        <div>13750</div>
-      </div>
-      <!-- Add more rows as needed -->
+    <div class="items-section">
+      <table class="items-table">
+        <!-- Table Header -->
+        <thead>
+          <tr>
+            <th>S.No</th>
+            <th>Description of Goods/Service</th>
+            <th>Quantity</th>
+            <th>Rate</th>
+            <th>Amount</th>
+          </tr>
+        </thead>
+        <!-- Table Body -->
+        <tbody>
+          <!-- Example Row 1 -->
+          <tr>
+            <td>1</td>
+            <td class="description">G-100 Burner with bottom and Air clamp<br>HSN Code: 84169000</td>
+            <td>5</td>
+            <td>2,750.00</td>
+            <td>13,750.00</td>
+          </tr>
+          <!-- Example Row 2 -->
+          <tr>
+            <td>2</td>
+            <td class="description">1/2" x 1/2" Hydraulic Hose Pipe 10 ft.<br>HSN Code: 40091100</td>
+            <td>10</td>
+            <td>675.00</td>
+            <td>6,750.00</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td class="description">1/2" x 1/2" Hydraulic Hose Pipe 10 ft.<br>HSN Code: 40091100</td>
+            <td>10</td>
+            <td>675.00</td>
+            <td>6,750.00</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
 
     <!-- Bank Details Section -->
