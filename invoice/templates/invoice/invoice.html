@@ -53,12 +53,14 @@
       left: 65%; /* Adjust based on layout */
     }
 
-    .first-divider, .second-divider {
+    .gstin-divider {
       border-top: 1px solid black;
-      margin: 0; /* Remove default spacing */
-      width: 100%; /* Ensures it spans the container */
+      margin: 5px 0;
+      width: calc(100% + 33px); /* Extend divider to touch borders, compensating for padding */
+      position: relative; /* Align relative to parent */
+      left: -24px; /* Adjust for left padding */
     }
-    
+        
     .items-table {
       width: 100%;
       border-collapse: collapse;
@@ -81,20 +83,48 @@
       margin: 0; /* Remove default spacing */
       width: calc(100% + 20px); /* Extend divider to touch borders, compensating for padding */
       position: relative; /* Align relative to parent */
-      left: -10px; /* Adjust for left padding */
-      
-    } 
-    .bank-details {
-      border: 1px solid black;
-      padding: 10px;
+      left: -10px; /* Adjust for left padding */ 
     }
-    .summary {
+
+    /* Table Styling for Bank Details and Summary */
+    .details-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .details-table td {
+      border: 1px solid black; /* Inner cell dividers */
+      padding: 8px;
+    }
+
+    .details-table .label {
+      width: 25%;
+      text-align: left; /* Align labels to the left */
+    }
+
+    .details-table .summary-label {
+      width: 25%;
+      text-align: left; /* Align summary labels to the left */
+    }
+
+    .details-table td:last-child {
+      text-align: right; /* Align values to the right for clarity */
+    }
+
+    /* Footer Section Styling */
+    .footer-section {
+      margin-top: 10px;
+      text-align: left;
+    }
+
+    .footer-section p {
+      margin: 5px 0;
+    }
+
+    .footer-section .signature {
       text-align: right;
       margin-top: 10px;
-    }
-    .footer {
-      text-align: center;
-      margin-top: 15px;
+      font-weight: bold;
     }
     
   </style>
@@ -122,7 +152,11 @@
         <div class="vertical-line"></div>
     
         <div class="right">
-          <p><b>GSTIN:</b> 37JJBPS651PZ3</p>
+            <!-- GSTIN Section with Divider -->
+          <div class="gstin-section">
+            <p><b>GSTIN:</b> <span>37JJBPS651PZ3</span></p>
+            <div class="gstin-divider"></div>
+          </div>
           <p><b>PO No:</b> 1119230042</p>
           <p><b>Invoice No:</b> TXB00327</p>
           <p><b>Date:</b> 05/11/2024</p>
@@ -174,26 +208,48 @@
         </tbody>
       </table>
     </div>
-
     <!-- Bank Details Section -->
-    <div class="section bank-details">
-      <p><b>Bank Name:</b> Indian Bank Ltd</p>
-      <p><b>Branch:</b> Tirupati</p>
-      <p><b>Account Number:</b> 50434228387</p>
-      <p><b>IFSC Code:</b> IDIB000T592</p>
-    </div>
-
-    <!-- Summary Section -->
-    <div class="summary">
-      <p><b>Subtotal:</b> ₹43,050</p>
-      <p><b>CGST (9%):</b> ₹3,874.50</p>
-      <p><b>SGST (9%):</b> ₹3,874.50</p>
-      <p><b>Total:</b> ₹50,799</p>
+    <div class="bank-details">
+      <table class="details-table">
+        <tr>
+          <td class="label"><b>A/c Name:</b></td>
+          <td>Sri Amudala's Gas Appliances & Commercial Works</td>
+          <td class="summary-label"><b>Sub Total</b></td>
+          <td>43,050.00</td>
+        </tr>
+        <tr>
+          <td class="label"><b>Bank Name:</b></td>
+          <td>Indian Bank Ltd</td>
+          <td class="summary-label"><b>CGST @ 9%</b></td>
+          <td>3,874.50</td>
+        </tr>
+        <tr>
+          <td class="label"><b>A/c No.:</b></td>
+          <td>50434228387</td>
+          <td class="summary-label"><b>SGST @ 9%</b></td>
+          <td>3,874.50</td>
+        </tr>
+        <tr>
+          <td class="label"><b>Branch:</b></td>
+          <td>Tirupati</td>
+          <td class="summary-label"><b>Grand Total (Rounded)</b></td>
+          <td>50,799.00</td>
+        </tr>
+        <tr>
+          <td class="label"><b>IFSC Code:</b></td>
+          <td>IDIB000T592</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </table>
     </div>
 
     <!-- Footer Section -->
-    <div class="footer">
-      <p>Authorized Signatory</p>
+    <div class="footer-section">
+      <p><b>Amount (in words):</b> Fifty thousand seven hundred and ninety-nine Rupees only</p>
+      <p><b>Terms & Conditions:</b></p>
+      <p>For Sri Amudala's Gas Appliances & Commercial Works</p>
+      <p class="signature">Authorized Signatory</p>
     </div>
   </div>
 </body>
