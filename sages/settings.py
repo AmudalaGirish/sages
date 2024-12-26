@@ -47,11 +47,14 @@ INSTALLED_APPS = [
     'service',
     'user_management',
     'core',
+    # thirdparty apps
+    'corsheaders',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -156,3 +159,10 @@ STATICFILES_FINDERS = [
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+CORS_ALLOWED_ORIGINS = [
+    "https://b0822473-18aa-4374-9831-0c42af8a4f71.lovableproject.com",
+]
+
+# Allow all origins for testing (not recommended for production)
+CORS_ALLOW_ALL_ORIGINS = True

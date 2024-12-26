@@ -23,6 +23,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('', include('core.urls')),
     path('enquiry/', include('enquiries.urls')),
+    path('', include('user_management.urls')),
 ]
 
 # Serve static files during development (not needed for production if you're using a web server like Nginx)
