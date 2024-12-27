@@ -49,6 +49,8 @@ INSTALLED_APPS = [
     'core',
     # thirdparty apps
     'corsheaders',
+    'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -82,6 +84,20 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'sages.wsgi.application'
 
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+    ),
+}
+
+from datetime import timedelta
+
+SIMPLE_JWT = {
+    'ACCESS_TOKEN_LIFETIME': timedelta(minutes=30),
+    'REFRESH_TOKEN_LIFETIME': timedelta(days=7),
+    'ROTATE_REFRESH_TOKENS': True,
+    'BLACKLIST_AFTER_ROTATION': True,
+}
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
@@ -166,3 +182,5 @@ CORS_ALLOWED_ORIGINS = [
 
 # Allow all origins for testing (not recommended for production)
 CORS_ALLOW_ALL_ORIGINS = True
+
+AUTH_USER_MODEL = 'user_management.User'
